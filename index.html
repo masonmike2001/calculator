@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset = "UTF-8">
+        <title>My Website</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="js-file.js" defer></script>
+    </head>
+    <body>
+        <div id="header">
+            <h1>mram.Calc</h1>
+            <h1>♾️</h1>
+        </div>
+        <div id="calculator">
+            <div id="display"></div>
+            <div id="keypad">
+                <div id="left-btns">
+                    <h2 class="key">+</h2>
+                    <h2 class="key">-</h2>
+                    <h2 class="key">x</h2>
+                    <h2 class="key">÷</h2>
+                </div>
+                <div id="num-btns">
+                    <!--btns 1-9 will be created with JavaScript DOM-->
+                    <div id="main-num">
+                        <div class="row">
+                            <h2 class="key">1</h2>
+                            <h2 class="key">2</h2>
+                            <h2 class="key">3</h2>
+                        </div>                        
+                        <div class="row">
+                            <h2 class="key">4</h2>
+                            <h2 class="key">5</h2>
+                            <h2 class="key">6</h2>
+                        </div>
+                        <div class="row">
+                            <h2 class="key">7</h2>
+                            <h2 class="key">8</h2>
+                            <h2 class="key">9</h2>
+                        </div>
+                    </div>
+                    <h2 class="key" id="zero-btn">0</h2> 
+                </div>     
+                <div id="right-btns">
+                    <h2 class="key">AC</h2>
+                    <h2 class="key" id="equal-btn">=</h2>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
