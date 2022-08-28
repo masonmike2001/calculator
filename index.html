@@ -13,7 +13,9 @@
             <h1>♾️</h1>
         </div>
         <div id="calculator">
-            <div id="display"></div>
+            <div id="display">
+                <h1 id="text-box">0</h1>
+            </div>
             <div id="keypad">
                 <div id="left-btns">
                     <h2 class="key">+</h2>
@@ -23,7 +25,6 @@
                 </div>
                 <div id="num-btns">
                     <!--btns 1-9 will be created with JavaScript DOM-->
-                    <div id="main-num">
                         <div class="row">
                             <h2 class="key">1</h2>
                             <h2 class="key">2</h2>
@@ -39,12 +40,17 @@
                             <h2 class="key">8</h2>
                             <h2 class="key">9</h2>
                         </div>
-                    </div>
-                    <h2 class="key" id="zero-btn">0</h2> 
+                        <div class="row">
+                            <h2 class="key">.</h2>
+                            <h2 class="key">0</h2> 
+                            <h2 class="key"><-</h2>
+                        </div>
                 </div>     
                 <div id="right-btns">
                     <h2 class="key">AC</h2>
-                    <h2 class="key" id="equal-btn">=</h2>
+                    <div id="equal-btn">
+                        <h2 class="key" id="equal-btn">=</h2>
+                    </div>
                 </div>
             </div>
         </div>

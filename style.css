@@ -24,7 +24,25 @@ h2 {
 
     background-color: #1B9AAA;
     margin: 50px;
+    margin-left: 550px;
+    margin-right: 550px;
+    padding: 20px;
 
+    border-radius: 30px;
+    border: dashed white 1px;
+}
+
+#display {
+    background-color: #dddbcb71;
+    width: 500px;
+
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding-right: 20px;
+
+    text-align: right;
+
+    border-radius: 15px;
 }
 
 #keypad {
@@ -36,6 +54,12 @@ h2 {
 #left-btns {
     display: flex;
     flex-direction: column;
+
+}
+#left-btns>h2 {
+
+    background-color: rgba(255, 255, 0, 0.349);
+    
 }
 
 #num-btns {
@@ -58,6 +82,16 @@ h2 {
     flex-direction: column;
 }
 
+#right-btns>div>h2 {
+    background-color: rgba(56, 203, 56, 0.493);
+}
+
+#right-btns>h2 {
+
+
+    background-color: rgba(255, 6, 6, 0.626);
+}
+
 .key {
     border: white solid 1px;
     border-radius: 15px;
@@ -68,22 +102,34 @@ h2 {
     width: 100px;
     height: auto;
 
-    transition: padding 0.9s;
+    transform: scale(1);
+    transition: transform 0.9s, background-color 0.9s;
+    background-color: #1B9AAA;
+    
 }
 
 .key:hover {
-    padding: 40px;
-    height: auto;
 
-    transition: padding 0.9s;
+
+    transform: scale(1.2);
+    transition: transform 0.9s, background-color 0.9s;
+
+    background-color: #3ab3c3;
+
+
 }
 
 #zero-btn {
     display: flex;
-
+    align-items: center;
     justify-content: center;
+
 }
 
 #equal-btn {
-    padding-bottom: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+    height: 220px;
 }
