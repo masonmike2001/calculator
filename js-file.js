@@ -27,9 +27,8 @@ leftButtons.forEach(button => {
 mainButtons.forEach(button => {
     button.addEventListener("click", updateInput);
 });
-mainButtons.forEach(button => {
-    button.addEventListener("keydown", updateInput);
-});
+document.addEventListener('keydown', updateInput)
+
 clearButton.addEventListener("click", clearCalculator);
 equalButton.addEventListener("click", addOperator);
 
@@ -102,59 +101,72 @@ function operate (nums, operators) //chooses an operator and executes it, return
         operators.splice(index, 1);
         index = operators.indexOf('-');
     }
+    nums[0] = Number((nums[0]).toFixed(3))
     return nums[0];
 }
 
 function updateInput (e) //takes the key input (tens and ones digit) and updates the total -> puts it on display
 {
     if (isEquationComplete) clearCalculator();
-    switch(e.target)
-        //checks for which number key is pressed (if . or del)
+    if (e.target == mainButtons[0] || e.keyCode == 49)
     {
-        case(mainButtons[0] || e.keyCode == 49):
-            input = 1;
-            break;
-        case(mainButtons[1]):
-            input = 2;
-            break;   
-        case(mainButtons[2]):
-            input = 3;
-            break;
-        case(mainButtons[3]):
-            input = 4;
-            break;
-        case(mainButtons[4]):
-            input = 5;
-            break;   
-        case(mainButtons[5]):
-            input = 6;
-            break;
-        case(mainButtons[6]):
-            input = 7;
-            break;
-        case(mainButtons[7]):
-            input = 8;
-            break;
-        case(mainButtons[8]):
-            input = 9;
-            break;   
-        case(mainButtons[9]):
-            //decimal    
-            input = 0.0;
-            isDecimalMode = true;
-            break;
-        case(mainButtons[10]):
-            input = 0;
-            break;
-        case(mainButtons[11]):
-            //backspace
-            displayValue -= (displayValue % 10);
-            displayValue /= 10;
-            display.innerText = displayValue;
-            if (displayValue == undefined) displayValue = 0;
-            return 0;
+        input = 1; 
     }
-
+    else if (e.target == mainButtons[1] || e.keyCode == 50)
+    {
+        input = 2; 
+    }
+    else if (e.target == mainButtons[2] || e.keyCode == 51)
+    {
+        input = 3; 
+    }
+    else if (e.target == mainButtons[3] || e.keyCode == 52)
+    {
+        input = 4; 
+    }
+    else if (e.target == mainButtons[4] || e.keyCode == 53)
+    {
+        input = 5; 
+    }
+    else if (e.target == mainButtons[5] || e.keyCode == 54)
+    {
+        input = 6; 
+    }
+    else if (e.target == mainButtons[6] || e.keyCode == 55)
+    {
+        input = 7; 
+    }
+    else if (e.target == mainButtons[7] || e.keyCode == 56)
+    {
+        input = 8; 
+    }
+    else if (e.target == mainButtons[8] || e.keyCode == 57)
+    {
+        input = 9; 
+    }
+    else if (e.target == mainButtons[9] || e.keyCode == 190)
+    {
+        //decimal    
+        input = 0.0;
+        isDecimalMode = true;
+    }
+    else if (e.target == mainButtons[10] || e.keyCode == 48)
+    {
+        input = 0; 
+    }
+    else if (e.target == mainButtons[11] || e.keyCode == 8)
+    {
+        //backspace
+        displayValue -= (displayValue % 10);
+        displayValue /= 10;
+        display.innerText = displayValue;
+        if (displayValue == undefined) displayValue = 0;
+        return 0;
+    }
+    
+    else {
+        return 0;
+    }
     if (isDecimalMode == true)
     {
         let power = 1.0;
@@ -185,6 +197,7 @@ function updateInput (e) //takes the key input (tens and ones digit) and updates
     inputDigits++;
     calcQueue[queueSize] = displayValue / 1.0;
     display.innerText = calcQueue[queueSize];
+    input = 0;
 }
 
 function clearCalculator()

@@ -24,19 +24,20 @@ h2 {
 
     background-color: #1B9AAA;
     margin: 50px;
-    margin-left: 550px;
-    margin-right: 550px;
-    padding: 20px;
+
+    padding: 40px;
 
     border-radius: 30px;
     border: dashed white 1px;
+
+    min-width: 730px;
 }
 
 #display {
     background-color: #dddbcb71;
     width: 500px;
 
-    margin-top: 40px;
+    margin-top: 20px;
     margin-bottom: 40px;
     padding-right: 20px;
 
@@ -68,9 +69,18 @@ h2 {
     
 }
 
+#text-history {
+    font-size: 20px;
+}
+
 #num-btns {
     display: flex;
     flex-direction: column;
+    
+}
+
+#num-btns>div>h2 {
+    background-color: rgba(186, 186, 186, 0.666);
 }
 
 #main-num {
