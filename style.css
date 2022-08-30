@@ -40,9 +40,15 @@ h2 {
     margin-bottom: 40px;
     padding-right: 20px;
 
-    text-align: right;
+    text-align: center;
 
     border-radius: 15px;
+
+
+}
+
+#display>h1 {
+    font-size: 30px;
 }
 
 #keypad {
